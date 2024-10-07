@@ -5,6 +5,7 @@
   let navOpen = false;
 </script>
 
+<!--Navbar-->
 <nav class="bg-gray-800 z-10 relative">
   <div class="mx-auto max-w-9xl px-2 sm:px-6 lg:px-8">
     <div class="relative flex h-16 items-center justify-between">
@@ -100,3 +101,10 @@
 {/if}
 
 <slot />
+
+<!--Footer-->
+<footer class="bg-gray-800 flex p-2 gap-2 items-center">
+  <h1 class="text-white">Applocker</h1>
+  <img class="w-8, h-8 rounded-md" src="lock.ico" alt="Lock" />
+  <a class="text-white left-0" href="/dsgvo">DSGVO</a>
+</footer>
