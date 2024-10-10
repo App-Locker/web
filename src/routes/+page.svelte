@@ -1,4 +1,10 @@
-<div class="grid lg:grid-cols-2 gap-16 p-8 sm:py-32 sm:px-16 border-b">
+<script lang="ts">
+  import FaqLink from "$lib/components/faq-link.svelte";
+  import { ChevronDown } from "lucide-svelte";
+  import { slide } from "svelte/transition";
+</script>
+
+<div class="grid lg:grid-cols-2 gap-8 sm:gap-16 p-8 sm:py-32 sm:px-16">
   <div class="flex flex-col gap-4 justify-start">
     <div class="flex flex-col gap-2">
       <h1 class="text-4xl sm:text-6xl font-bold text-slate-900">
@@ -30,11 +36,52 @@
   <img src="lock.gif" alt="Lock" class="w-full" />
 </div>
 
-<div id="info" class="h-full py-20 border-b px-16">
+<div id="info" class="h-full py-20 border-y px-8 sm:px-16">
   <p>
     AppLocker is a free app that allows you to lock any app on your device. This
     way, you can protect your personal data from prying eyes. It is easy to use
     and works on all Windows devices. Download AppLocker today and keep your
     data safe.
   </p>
+</div>
+
+<div class="flex flex-col gap-8 sm:gap-16 p-8 sm:py-32 sm:px-16">
+  <div>
+    <h1 class="text-4xl sm:text-6xl font-bold text-slate-900">
+      Do You Have Questions?
+    </h1>
+    <h2 class="text-2xl sm:text-4xl text-slate-900">
+      We have answers (well, most of them!)
+    </h2>
+  </div>
+  <p>
+    Down below you will find the most common questions you may have on Web
+    AppLocker as well as AppLocker.
+  </p>
+  <div class="grid lg:grid-cols-2 gap-8 sm:gap-16">
+    <div>
+      <h1 class="text-2xl font-bold">FAQ AppLocker</h1>
+      <FaqLink question="How much does it cost?">
+        <p slot="answer">
+          AppLocker is an Opensource programm so everybody can use it for free!
+        </p>
+      </FaqLink>
+
+      <FaqLink question="Can I only use it on Windows?">
+        <p slot="answer">
+          Currently, AppLocker is available for Windows devices only.
+        </p>
+      </FaqLink>
+    </div>
+
+    <div>
+      <h1 class="text-2xl font-bold">FAQ Web</h1>
+      <FaqLink question="How can I contact you?">
+        <p slot="answer">
+          In our <a href="/team" class="text-blue-700 underline">Team</a> page, you
+          can see our contact information.
+        </p>
+      </FaqLink>
+    </div>
+  </div>
 </div>

@@ -1,21 +1,11 @@
 <script lang="ts">
-  let {
-    src,
-    alt,
-    firstname,
-    lastname,
-    rank,
-    feature,
-    mailto,
-  }: {
-    src: string;
-    alt: string;
-    firstname: string;
-    lastname: string;
-    rank: string;
-    feature: string;
-    mailto: string;
-  } = $props();
+  export let src: string;
+  export let alt: string;
+  export let firstname: string;
+  export let lastname: string;
+  export let rank: string;
+  export let feature: string;
+  export let mailto: string;
 </script>
 
 <div class="max-w-md w-full bg-white shadow-lg rounded-lg p-10 mx-4 md:mx-auto">

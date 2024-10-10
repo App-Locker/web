@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { fly } from "svelte/transition";
   import "../app.css";
+  import { slide } from "svelte/transition";
   import { onMount } from "svelte";
   import NavLink from "$lib/components/nav-link.svelte";
 
@@ -17,7 +17,7 @@
         "https://api.github.com/repos/App-Locker/web/commits/dev"
       );
       const data = await response.json();
-      commitDate = new Date(data.commit.author.date).toDateString();
+      commitDate = new Date(data.commit.author.date).toDateString().slice(4);
       commitHash = data.sha.slice(0, 7);
 
       commitUrl = data.url;
@@ -70,11 +70,7 @@
 
 <!--Mobile Menu-->
 {#if navOpen}
-  <div
-    transition:fly={{ y: -50, opacity: 0 }}
-    id="mobile-menu"
-    class="block sm:hidden bg-gray-800 -z-10"
-  >
+  <div transition:slide class="block sm:hidden bg-gray-800 -z-10">
     <div class="flex flex-col space-y-1 px-2 pb-3 pt-2">
       <NavLink href="/">Home</NavLink>
       <NavLink href="/team">Team</NavLink>
@@ -101,7 +97,7 @@
 
     <!-- svelte-ignore a11y_mouse_events_have_key_events -->
     <a
-      class="underline rounded-md px-3 text-end w-40"
+      class="underline rounded-md px-3 text-end w-28"
       href="https://github.com/App-Locker/web"
       on:mouseover={(event) => {
         event.currentTarget.innerText = commitHash;
