@@ -1,103 +1,37 @@
-<div class="flex justify-center items-center p-10 flex-col gap-8 lg:flex-row">
-  <div
-    class="max-w-md w-full bg-white shadow-lg rounded-lg p-10 mx-4 md:mx-auto"
-  >
-    <h2 class="text-2xl font-bold text-gray-800 text-center">
-      Roman<br />Fruth
-    </h2>
-    <p class="text-gray-400 text-center mb-4">CEO</p>
-    <div class="flex justify-center mb-4">
-      <img src="mustermann.png" alt="Basti" class="w-3/5" />
-    </div>
+<script>
+  import EmployeeCard from "$lib/components/employee-card.svelte";
+</script>
 
-    <ul class="space-y-3 mb-6">
-      <div class="flex justify-center items-center space-x-2">
-        <li class="text-gray-600 text-sm list-disc">feature</li>
-      </div>
+<div
+  class="flex justify-center items-center py-8 sm:py-32 p-10 flex-col gap-8 lg:flex-row"
+>
+  <EmployeeCard
+    alt="Roman Foto"
+    feature="test"
+    mailto="fruroa21"
+    firstname="Roman"
+    lastname="Fruth"
+    rank="CEO"
+    src="mustermann.png"
+  ></EmployeeCard>
 
-      <div class="flex justify-center items-center space-x-2">
-        <li class="text-gray-600 text-sm list-disc">feature</li>
-      </div>
+  <EmployeeCard
+    alt="Bastian Foto"
+    feature="test"
+    mailto="sriba21"
+    firstname="Bastian"
+    lastname="Schrittwieser"
+    rank="CFO & CTO"
+    src="mustermann.png"
+  ></EmployeeCard>
 
-      <div class="flex justify-center items-center space-x-2">
-        <li class="text-gray-600 text-sm list-disc">feature</li>
-      </div>
-    </ul>
-    <div class="text-center">
-      <a
-        class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition"
-        href="mailto:fruroa21@htl-kaindorf.at"
-      >
-        Contact Now
-      </a>
-    </div>
-  </div>
-
-  <div
-    class="max-w-md w-full bg-white shadow-lg rounded-lg p-10 mx-4 md:mx-auto"
-  >
-    <h2 class="text-2xl font-bold text-gray-800 text-center">
-      Bastian<br />Schrittwieser
-    </h2>
-    <p class="text-gray-400 text-center mb-4">CFO & CTO</p>
-    <div class="flex justify-center mb-4">
-      <img src="mustermann.png" alt="Basti" class="w-3/5" />
-    </div>
-
-    <ul class="space-y-3 mb-6">
-      <div class="flex justify-center items-center space-x-2">
-        <li class="text-gray-600 text-sm list-disc">feature</li>
-      </div>
-
-      <div class="flex justify-center items-center space-x-2">
-        <li class="text-gray-600 text-sm list-disc">feature</li>
-      </div>
-
-      <div class="flex justify-center items-center space-x-2">
-        <li class="text-gray-600 text-sm list-disc">feature</li>
-      </div>
-    </ul>
-    <div class="text-center">
-      <a
-        class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition"
-        href="mailto:sribaa21@htl-kaindorf.at"
-      >
-        Contact Now
-      </a>
-    </div>
-  </div>
-
-  <div
-    class="max-w-md w-full bg-white shadow-lg rounded-lg p-10 mx-4 md:mx-auto"
-  >
-    <h2 class="text-2xl font-bold text-gray-800 text-center">
-      Noah<br />Winkler
-    </h2>
-    <p class="text-gray-400 text-center mb-4">Senior VP</p>
-    <div class="flex justify-center mb-4">
-      <img src="mustermann.png" alt="Basti" class="w-3/5" />
-    </div>
-
-    <ul class="space-y-3 mb-6">
-      <div class="flex justify-center items-center space-x-2">
-        <li class="text-gray-600 text-sm list-disc">feature</li>
-      </div>
-
-      <div class="flex justify-center items-center space-x-2">
-        <li class="text-gray-600 text-sm list-disc">feature</li>
-      </div>
-
-      <div class="flex justify-center items-center space-x-2">
-        <li class="text-gray-600 text-sm list-disc">feature</li>
-      </div>
-    </ul>
-    <div class="text-center">
-      <a
-        class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition"
-        href="mailto:winnoa21@htl-kaindorf.at"
-      >
-        Contact Now
-      </a>
-    </div>
-  </div>
+  <EmployeeCard
+    alt="Noah Foto"
+    feature="test"
+    mailto="winnoa21"
+    firstname="Noah"
+    lastname="Winkler"
+    rank="Senior VP"
+    src="mustermann.png"
+  ></EmployeeCard>
 </div>

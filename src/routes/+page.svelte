@@ -1,40 +1,40 @@
-<div class="flex justify-center py-10">
-  <div
-    class="max-w-md w-full bg-white shadow-lg rounded-lg p-10 mx-4 md:mx-auto"
-  >
-    <h2 class="text-2xl font-bold text-gray-800 text-center mb-4">
-      App Locker
-    </h2>
-    <div class="flex justify-center">
-      <img src="lock.gif" alt="Lock" class="w-3/5" />
-    </div>
-    <div class="text-center mb-2">
-      <span class="text-lg text-gray-500">100% </span>
-      <span class="text-2xl font-extrabold text-gray-900">free</span>
-    </div>
-    <ul class="space-y-3 mb-6">
-      <div class="flex justify-center items-center space-x-2">
-        <img class="w-4 h-4" src="checkmark_green.ico" alt="Checkmark" />
-        <li class="text-gray-600 text-sm list-none">feature</li>
-      </div>
+<div class="grid lg:grid-cols-2 gap-16 p-8 sm:py-32 sm:px-16 border-b">
+  <div class="flex flex-col gap-4 justify-start">
+    <div class="flex flex-col gap-2">
+      <h1 class="text-4xl sm:text-6xl font-bold text-slate-900">
+        Enhance your security with AppLocker
+      </h1>
 
-      <div class="flex justify-center items-center space-x-2">
-        <img class="w-4 h-4" src="checkmark_green.ico" alt="Checkmark" />
-        <li class="text-gray-600 text-sm list-none">feature</li>
-      </div>
+      <p class="text-slate-700 font-medium">
+        Using AppLocker, you can lock any app on your device. So no one can
+        access your personal data without your permission.
+      </p>
+    </div>
 
-      <div class="flex justify-center items-center space-x-2">
-        <img class="w-4 h-4" src="checkmark_green.ico" alt="Checkmark" />
-        <li class="text-gray-600 text-sm list-none">feature</li>
-      </div>
-    </ul>
-    <div class="text-center">
+    <div class="grid sm:grid-cols-2 gap-2">
       <a
-        href="download"
-        class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition"
+        class="h-10 px-4 bg-blue-700 text-white flex justify-center rounded-lg items-center"
+        href="/download"
       >
         Download Now
       </a>
+      <a
+        class="h-10 px-4 text-blue-700 hover:underline flex justify-center items-center"
+        href="#info"
+      >
+        Learn More
+      </a>
     </div>
   </div>
+
+  <img src="lock.gif" alt="Lock" class="w-full" />
+</div>
+
+<div id="info" class="h-full py-20 border-b px-16">
+  <p>
+    AppLocker is a free app that allows you to lock any app on your device. This
+    way, you can protect your personal data from prying eyes. It is easy to use
+    and works on all Windows devices. Download AppLocker today and keep your
+    data safe.
+  </p>
 </div>

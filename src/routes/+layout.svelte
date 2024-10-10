@@ -2,10 +2,13 @@
   import { fly } from "svelte/transition";
   import "../app.css";
   import { onMount } from "svelte";
+  import NavLink from "$lib/components/nav-link.svelte";
 
   let navOpen = false;
 
+  let commitDate = "";
   let commitHash = "";
+  let commitUrl = "";
 
   // Function to fetch the latest commit hash from GitHub
   const fetchLatestCommit = async () => {
@@ -14,7 +17,10 @@
         "https://api.github.com/repos/App-Locker/web/commits/dev"
       );
       const data = await response.json();
-      commitHash = data.sha.substring(0, 7);
+      commitDate = new Date(data.commit.author.date).toDateString();
+      commitHash = data.sha.slice(0, 7);
+
+      commitUrl = data.url;
     } catch (error) {
       console.error("Failed to fetch commit hash", error);
     }
@@ -39,27 +45,10 @@
       >
         <div class="hidden sm:ml-6 sm:block">
           <div class="flex space-x-4">
-            <a
-              href="/"
-              class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white"
-              aria-current="page"
-              >Home
-            </a>
-            <a
-              href="/team"
-              class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-              >Team</a
-            >
-            <a
-              href="/download"
-              class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-              >Downloads</a
-            >
-            <a
-              href="/changelog"
-              class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-              >Changelogs</a
-            >
+            <NavLink href="/">Home</NavLink>
+            <NavLink href="/team">Team</NavLink>
+            <NavLink href="/download">Download</NavLink>
+            <NavLink href="/changelog">Changelog</NavLink>
           </div>
         </div>
       </div>
@@ -67,11 +56,7 @@
         class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0"
       >
         <div class="hidden sm:ml-6 sm:block">
-          <a
-            href="/about-us"
-            class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-            >About Us</a
-          >
+          <NavLink href="/about-us">About Us</NavLink>
         </div>
         <img
           class="h-8 w-auto mx-3 rounded-md"
@@ -90,32 +75,12 @@
     id="mobile-menu"
     class="block sm:hidden bg-gray-800 -z-10"
   >
-    <div class="space-y-1 px-2 pb-3 pt-2">
-      <a
-        href="/"
-        class="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white"
-        aria-current="page">Home</a
-      >
-      <a
-        href="/team"
-        class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-        >Team</a
-      >
-      <a
-        href="/download"
-        class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-        >Downloads</a
-      >
-      <a
-        href="/changelog"
-        class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-        >Changelogs</a
-      >
-      <a
-        href="/about-us"
-        class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-        >About Us</a
-      >
+    <div class="flex flex-col space-y-1 px-2 pb-3 pt-2">
+      <NavLink href="/">Home</NavLink>
+      <NavLink href="/team">Team</NavLink>
+      <NavLink href="/download">Download</NavLink>
+      <NavLink href="/changelog">Changelog</NavLink>
+      <NavLink href="/about-us">About Us</NavLink>
     </div>
   </div>
 {/if}
@@ -123,19 +88,29 @@
 <slot />
 
 <!--Footer-->
-<footer class="bg-gray-800 flex p-2 gap-3 justify-between items-center">
+<footer
+  class="bg-gray-800 flex p-2 gap-0 sm:gap-3 justify-between items-center"
+>
   <div class="flex items-center gap-3">
     <h1 class="text-white hidden sm:block">Applocker</h1>
     <img class="w-8 h-8 rounded-md" src="lock.ico" alt="Lock" />
   </div>
-  <a class="text-white" href="/privacy-policy">Privacy Policy</a>
-  <div class="flex flex-row text-white">
-    <p class="hidden sm:block">Commit:</p>
+  <NavLink href="/privacy-policy">Privacy Policy</NavLink>
+  <div class="flex flex-col sm:flex-row py-2 items-center text-white">
+    <p>Latest Update:</p>
+
+    <!-- svelte-ignore a11y_mouse_events_have_key_events -->
     <a
-      class="underline"
-      href={`https://github.com/App-Locker/web/commit/${commitHash}`}
+      class="underline rounded-md px-3 text-end w-40"
+      href="https://github.com/App-Locker/web"
+      on:mouseover={(event) => {
+        event.currentTarget.innerText = commitHash;
+      }}
+      on:mouseleave={(event) => {
+        event.currentTarget.innerText = commitDate;
+      }}
     >
-      {commitHash}
+      {commitDate}
     </a>
   </div>
 </footer>
