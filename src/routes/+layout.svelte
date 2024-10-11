@@ -84,9 +84,7 @@
 <slot />
 
 <!--Footer-->
-<footer
-  class="bg-gray-800 flex p-2 gap-0 sm:gap-3 justify-between items-center"
->
+<footer class="bg-gray-800 flex p-2 gap-0 sm:gap-3 justify-evenly items-center">
   <div class="flex items-center gap-3">
     <h1 class="text-white hidden sm:block">Applocker</h1>
     <img class="w-8 h-8 rounded-md" src="lock.ico" alt="Lock" />
