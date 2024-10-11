@@ -1,7 +1,5 @@
 <script lang="ts">
   import FaqLink from "$lib/components/faq-link.svelte";
-  import { ChevronDown } from "lucide-svelte";
-  import { slide } from "svelte/transition";
 </script>
 
 <div class="grid lg:grid-cols-2 gap-8 sm:gap-16 p-8 sm:py-32 sm:px-16">
@@ -60,7 +58,7 @@
   </p>
   <div class="grid lg:grid-cols-2 gap-8 sm:gap-16">
     <div>
-      <h1 class="text-2xl font-bold">FAQ AppLocker</h1>
+      <h1 class="text-2xl font-bold">FAQ AppLocker Desktop</h1>
       <FaqLink question="How much does it cost?">
         <p slot="answer">
           AppLocker is an Opensource programm so everybody can use it for free!
@@ -75,11 +73,18 @@
     </div>
 
     <div>
-      <h1 class="text-2xl font-bold">FAQ Web</h1>
+      <h1 class="text-2xl font-bold">FAQ AppLocker Web</h1>
       <FaqLink question="How can I contact you?">
         <p slot="answer">
-          In our <a href="/team" class="text-blue-700 underline">Team</a> page, you
-          can see our contact information.
+          You can Conact us either on <a
+            class="text-blue-700 underline"
+            href="mailto: contact@applocker.xyz"
+          >
+            contact@applocker.xyz
+          </a>
+          or on our
+          <a href="/team" class="text-blue-700 underline">Team</a> page to see our
+          contact information.
         </p>
       </FaqLink>
     </div>
