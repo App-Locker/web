@@ -1,5 +1,32 @@
 <script lang="ts">
   import FaqLink from "$lib/components/faq-link.svelte";
+
+  const features = [
+    {
+      title: "App Locking",
+      description: "Easily lock any app on your device for added privacy.",
+    },
+    {
+      title: "Data Protection",
+      description: "Keep your personal information secure from prying eyes.",
+    },
+    {
+      title: "Cross-Device Compatibility",
+      description: "Works smoothly on all Windows devices.",
+    },
+    {
+      title: "User-Friendly",
+      description: "Simple and intuitive interface for easy app management.",
+    },
+    {
+      title: "Completely Free",
+      description: "Enjoy full functionality at no cost.",
+    },
+    {
+      title: "Quick Setup",
+      description: "Get started in minutes and protect your apps effortlessly.",
+    },
+  ];
 </script>
 
 <div class="grid lg:grid-cols-2 gap-8 sm:gap-16 p-8 sm:py-32 sm:px-16">
@@ -34,13 +61,16 @@
   <img src="lock.gif" alt="Lock" class="w-full" />
 </div>
 
-<div id="info" class="h-full py-20 border-y px-8 sm:px-16">
-  <p>
-    AppLocker is a free app that allows you to lock any app on your device. This
-    way, you can protect your personal data from prying eyes. It is easy to use
-    and works on all Windows devices. Download AppLocker today and keep your
-    data safe.
-  </p>
+<div
+  id="info"
+  class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 py-20 border-y px-8 md:px-16"
+>
+  {#each features as { title, description }}
+    <div class="flex flex-col gap-4 p-4 rounded-lg shadow-lg text-center">
+      <h1 class="text-lg font-medium">{title}</h1>
+      <p>{description}</p>
+    </div>
+  {/each}
 </div>
 
 <div class="flex flex-col gap-8 sm:gap-16 p-8 sm:py-32 sm:px-16">
