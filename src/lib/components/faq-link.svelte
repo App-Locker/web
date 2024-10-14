@@ -17,6 +17,6 @@
 
 {#if faqOpen}
   <div transition:slide class="mb-4 py-4">
-    <slot name="answer"></slot>
+    <slot></slot>
   </div>
 {/if}

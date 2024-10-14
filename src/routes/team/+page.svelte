@@ -7,7 +7,9 @@
 >
   <EmployeeCard
     alt="Roman Foto"
-    feature="test"
+    feature1="test1"
+    feature2="test2"
+    feature3="test3"
     mailto="fruroa21"
     firstname="Roman"
     lastname="Fruth"
@@ -17,7 +19,9 @@
 
   <EmployeeCard
     alt="Bastian Foto"
-    feature="test"
+    feature1="test1"
+    feature2="test2"
+    feature3="test3"
     mailto="sriba21"
     firstname="Bastian"
     lastname="Schrittwieser"
@@ -27,7 +31,9 @@
 
   <EmployeeCard
     alt="Noah Foto"
-    feature="test"
+    feature1="test1"
+    feature2="test2"
+    feature3="test3"
     mailto="winnoa21"
     firstname="Noah"
     lastname="Winkler"

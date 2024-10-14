@@ -4,7 +4,9 @@
   export let firstname: string;
   export let lastname: string;
   export let rank: string;
-  export let feature: string;
+  export let feature1: string;
+  export let feature2: string;
+  export let feature3: string;
   export let mailto: string;
 </script>
 
@@ -17,9 +19,9 @@
     <img {src} class="w-3/5" {alt} />
   </div>
   <ul class="flex flex-col justify-center items-center gap-1 mb-6">
-    <li class="text-gray-600 text-sm list-disc">{feature}</li>
-    <li class="text-gray-600 text-sm list-disc">{feature}</li>
-    <li class="text-gray-600 text-sm list-disc">{feature}</li>
+    <li class="text-gray-600 text-sm list-disc">{feature1}</li>
+    <li class="text-gray-600 text-sm list-disc">{feature2}</li>
+    <li class="text-gray-600 text-sm list-disc">{feature3}</li>
   </ul>
   <div class="text-center">
     <a

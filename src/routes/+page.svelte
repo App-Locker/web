@@ -90,14 +90,14 @@
     <div>
       <h1 class="text-2xl font-bold">FAQ AppLocker Desktop</h1>
       <FaqLink question="How much does it cost?">
-        <p slot="answer">
+        <p>
           AppLocker is an Opensource programm so everybody can use it for free!
         </p>
       </FaqLink>
 
       <FaqLink question="Can I only use it on Windows?">
-        <p slot="answer">
-          Currently, AppLocker is available for Windows devices only.
+        <p>
+          Currently, <b>AppLocker</b> is available for Windows devices only.
         </p>
       </FaqLink>
     </div>
@@ -105,7 +105,7 @@
     <div>
       <h1 class="text-2xl font-bold">FAQ AppLocker Web</h1>
       <FaqLink question="How can I contact you?">
-        <p slot="answer">
+        <p>
           You can Conact us either on <a
             class="text-blue-700 underline"
             href="mailto: contact@applocker.xyz"
