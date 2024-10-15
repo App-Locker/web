@@ -27,6 +27,8 @@
       description: "Get started in minutes and protect your apps effortlessly.",
     },
   ];
+
+  export let data;
 </script>
 
 <div class="grid lg:grid-cols-2 gap-8 sm:gap-16 p-8 sm:py-32 sm:px-16">

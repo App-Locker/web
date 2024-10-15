@@ -43,7 +43,7 @@
       <div
         class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start"
       >
-        <div class="hidden sm:ml-6 sm:block">
+        <div class="hidden sm:block">
           <div class="flex space-x-4">
             <NavLink href="/">Home</NavLink>
             <NavLink href="/team">Team</NavLink>
@@ -55,14 +55,15 @@
       <div
         class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0"
       >
-        <div class="hidden sm:ml-6 sm:block">
-          <NavLink href="/about-us">About Us</NavLink>
+        <div class="flex items-center gap-3">
+          <NavLink class="sm:block hidden" href="/about-us">About Us</NavLink>
+          <NavLink
+            class="flex items-center rounded-md hover:bg-slate-600 px-2 py-0.5 text-sm font-medium text-white gap-3"
+            href="/login"
+            >Login
+            <img class="h-8 w-auto rounded-md" src="lock.ico" alt="AppLocker" />
+          </NavLink>
         </div>
-        <img
-          class="h-8 w-auto mx-3 rounded-md"
-          src="lock.ico"
-          alt="AppLocker"
-        />
       </div>
     </div>
   </div>

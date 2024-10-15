@@ -22,6 +22,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"lucide-svelte": "^0.451.0"
+		"lucide-svelte": "^0.451.0",
+		"postgres": "^3.4.4"
 	}
 }
