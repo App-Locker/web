@@ -5,7 +5,7 @@ import { redirect } from '@sveltejs/kit';
 
 const BLOCKED_ROUTES = ['/dashboard'];
 
-export const load = async ({ url }) => {
+export const load = async ({ url }: any) => {
     if (!browser) return;
 
     try {
