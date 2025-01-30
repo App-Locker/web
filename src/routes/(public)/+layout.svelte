@@ -16,7 +16,7 @@
 		</div>
 
 		<!--Right-->
-		{#if !user}
+		{#if !user.value}
 			<div class="flex gap-4">
 				<a class="text-sm font-semibold leading-6" href="/login">Login</a>
 				<a class="text-sm font-semibold leading-6" href="/register">Register</a>

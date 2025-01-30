@@ -121,14 +121,6 @@
 				>
 					{isSubmitting ? 'Submitting...' : 'Create your account'}
 				</button>
-
-				<!-- Logout Button -->
-				<button
-					type="button"
-					on:click={() => user.logout()}
-					class="inline-flex h-10 items-center justify-center gap-2 rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground disabled:opacity-50"
-					>Logout
-				</button>
 			</form>
 		</div>
 	</div>

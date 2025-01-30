@@ -2,6 +2,7 @@ import { browser } from '$app/environment';
 import { goto } from '$app/navigation';
 import { account } from '$lib/appwrite';
 import { ID, type Models } from 'appwrite';
+import { invalidateAll } from '$app/navigation';
 
 type UserStore = {
     value: Models.User<any> | null;
@@ -39,6 +40,9 @@ const createUser = () => {
     async function logout() {
         await account.deleteSession('current');
         store.value = null;
+
+        invalidateAll();
+        goto('/');
     }
 
     return {
