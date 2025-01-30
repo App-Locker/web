@@ -9,7 +9,7 @@
 	<nav class="flex items-center justify-between">
 		<!--Left-->
 		<div>
-			<a class="flex items-center gap-2 text-sm font-semibold leading-6" href="/">
+			<a class="flex items-center gap-2 text-sm font-medium leading-6" href="/">
 				<ArrowLeft />
 				Back to Home
 			</a>

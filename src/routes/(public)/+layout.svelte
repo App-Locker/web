@@ -12,23 +12,23 @@
 		<!--Left-->
 		<div class="flex items-center gap-4">
 			<a href="/"><img class="h-8 w-auto" src="logo.svg" alt="AppLocker Logo" /></a>
-			<a class="text-sm font-semibold leading-6" href="/about-us">About us</a>
-			<a class="text-sm font-semibold leading-6" href="/download">Download</a>
-			<a class="text-sm font-semibold leading-6" href="/changelog">Changelog</a>
+			<a class="text-sm font-medium leading-6" href="/about-us">About us</a>
+			<a class="text-sm font-medium leading-6" href="/download">Download</a>
+			<a class="text-sm font-medium leading-6" href="/changelog">Changelog</a>
 		</div>
 
 		<!--Right-->
 		{#if !user.value}
 			<div class="flex items-center gap-4">
-				<a class="text-sm font-semibold leading-6" href="/login">Login</a>
-				<a class="text-sm font-semibold leading-6" href="/register">Register</a>
+				<a class="text-sm font-medium leading-6" href="/login">Login</a>
+				<a class="text-sm font-medium leading-6" href="/register">Register</a>
 			</div>
 		{:else}
 			<div class="flex items-center gap-4">
-				<a class="text-sm font-semibold leading-6" href="/dashboard">Dashboard</a>
+				<a class="text-sm font-medium leading-6" href="/dashboard">Dashboard</a>
 				<button
 					onclick={() => (profileOpen = !profileOpen)}
-					class="rounded-full border px-3.5 py-1.5 text-sm font-semibold leading-6"
+					class="rounded-full border px-3.5 py-1.5 text-sm font-medium leading-6"
 					>{user.value?.name.charAt(0).toUpperCase()}</button
 				>
 			</div>
