@@ -57,5 +57,5 @@ To contribute or run the project locally, follow these steps:
 ### Installation
 Clone the repository:
 ```bash
-   git clone https://github.com/yourusername/applocker.git
+   git clone https://github.com/App-Locker/web.git
 ```
