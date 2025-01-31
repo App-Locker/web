@@ -37,6 +37,30 @@ const createUser = () => {
         goto('/dashboard');
     }
 
+    async function updateEmail(newEmail: string, password: string) {
+        if (!browser) return;
+        await account.updateEmail(newEmail, password);
+        await init();
+    }
+
+    async function updateUsername(newName: string) {
+        if (!browser) return;
+        await account.updateName(newName);
+        await init();
+    }
+
+    async function updatePassword(newPassword: string, oldPassword: string) {
+        if (!browser) return;
+        await account.updatePassword(newPassword, oldPassword);
+        await init();
+    }
+
+    async function updatePhone(newPhone: string, password: string) {
+        if (!browser) return;
+        await account.updatePhone(newPhone, password);
+        await init();
+    }
+
     async function logout() {
         await account.deleteSession('current');
         store.value = null;
@@ -52,6 +76,10 @@ const createUser = () => {
 
         register,
         login,
+        updateEmail,
+        updateUsername,
+        updatePassword,
+        updatePhone,
         logout,
         init
     };

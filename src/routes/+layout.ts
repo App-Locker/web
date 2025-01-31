@@ -3,7 +3,7 @@ import { goto } from '$app/navigation';
 import { user } from '$lib/store/user.svelte.js';
 import { redirect } from '@sveltejs/kit';
 
-const BLOCKED_ROUTES = ['/dashboard'];
+const BLOCKED_ROUTES = ['/dashboard', '/settings'];
 
 export const load = async ({ url }: any) => {
     if (!browser) return;
@@ -21,6 +21,7 @@ export const load = async ({ url }: any) => {
         return { user: userSession };
     } catch (error) {
         console.error("Error fetching user session:", error);
+
         return { user: null };
     }
 };
