@@ -44,6 +44,10 @@ const config: Config = {
 			ringColor: {
 				input: 'hsl(var(--ring))',
 			},
+
+			fontSize: {
+				'6xl': ['3.75rem', '1'],
+			}
 		},
 	},
 	plugins: [typography, forms, containerQueries],
