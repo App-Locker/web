@@ -12,7 +12,7 @@
 		<!--Left-->
 		<div class="flex items-center gap-4">
 			<a href="/"><img class="h-8 w-auto" src="logo.svg" alt="AppLocker Logo" /></a>
-			<a class="text-sm font-medium leading-6" href="/about-us">About us</a>
+			<a class="text-sm font-medium leading-6" href="/#about">About</a>
 			<a class="text-sm font-medium leading-6" href="/download">Download</a>
 			<a class="text-sm font-medium leading-6" href="/changelog">Changelog</a>
 		</div>
