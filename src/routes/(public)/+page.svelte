@@ -5,7 +5,7 @@
 
 <div class="flex flex-col justify-start gap-32 p-8 sm:px-16 sm:py-32 md:gap-64">
 	<!-- Hero Section -->
-	<div class="max-w-4xl">
+	<div class="max-w-4xl space-y-8">
 		<div class="flex flex-col gap-2">
 			<h1 class="text-4xl font-bold text-slate-900 sm:text-6xl">
 				Enhance your security with AppLocker
