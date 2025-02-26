@@ -51,7 +51,7 @@
 
 {#each features as { title, description, Icon }}
 	<div
-		class="relative flex flex-col overflow-hidden rounded-lg border border-gray-200 p-4 shadow-lg"
+		class="relative flex min-h-28 flex-col overflow-hidden rounded-lg border border-gray-200 p-4 shadow-lg"
 	>
 		<h2 class="text-lg font-bold text-gray-600">{title}</h2>
 		<p class="text-gray-400">{description}</p>
