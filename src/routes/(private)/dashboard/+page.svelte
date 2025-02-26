@@ -2,7 +2,7 @@
 	import { PlusIcon } from 'lucide-svelte';
 </script>
 
-<main class="grid-cols-[384px_auto ] grid bg-gray-100">
+<main class="grid grid-cols-[384px_auto] bg-gray-100">
 	<div class="min-h-screen bg-white p-8 shadow-md">
 		<h1 class="mb-6 text-2xl font-bold text-gray-800">AppLocker</h1>
 
