@@ -89,14 +89,12 @@
 				<h1 class="text-2xl font-bold">FAQ AppLocker Web</h1>
 				<FaqLink question="How can I contact you?">
 					<p>
-						You can Conact us either on <a
+						You can contact us via Mail on <a
 							class="text-blue-700 underline"
 							href="mailto: contact@applocker.xyz"
 						>
 							contact@applocker.xyz
 						</a>
-						or on our
-						<a href="/team" class="text-blue-700 underline">Team</a> page to see our contact information.
 					</p>
 				</FaqLink>
 			</div>
