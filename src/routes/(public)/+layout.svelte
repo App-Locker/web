@@ -59,3 +59,28 @@
 <main class="min-h-[calc(100vh-6.6em)]">
 	{@render children()}
 </main>
+
+<footer
+	class="flex flex-col justify-between gap-8 border-t bg-white p-8 sm:flex-row sm:items-center"
+>
+	<div class="flex flex-col items-start justify-center gap-2">
+		<img src="/logo.svg" class="h-12" alt="logo" />
+		<p class="pl-2 text-sm font-medium">© 2025 all rights reserved</p>
+	</div>
+	<div class="flex flex-col gap-4 md:flex-row md:gap-32">
+		<div class="flex flex-col gap-2">
+			<h1 class="text-lg font-medium">Links</h1>
+			<ul>
+				<li><a href="/#home">Home</a></li>
+				<li><a href="/#about">About</a></li>
+			</ul>
+		</div>
+		<div class="flex flex-col gap-2">
+			<h1 class="text-lg font-medium">Legal</h1>
+			<ul>
+				<li><a href="/terms-of-service">Terms of Service</a></li>
+				<li><a href="/privacy-policy">Privacy Policy</a></li>
+			</ul>
+		</div>
+	</div>
+</footer>
