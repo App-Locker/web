@@ -1,11 +1,11 @@
 <script lang="ts">
 	import { Icon as LucideIcon } from 'lucide-svelte';
 	import {
-		LockKeyholeIcon,
-		ShieldCheckIcon,
-		MonitorSmartphoneIcon,
-		SmileIcon,
 		GiftIcon,
+		LockKeyholeIcon,
+		MonitorSmartphoneIcon,
+		ShieldCheckIcon,
+		SmileIcon,
 		ZapIcon
 	} from 'lucide-svelte/icons';
 
