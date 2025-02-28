@@ -1,29 +1,79 @@
 <script>
-	import { PlusIcon } from 'lucide-svelte';
+	import { goto } from '$app/navigation';
+	import { page } from '$app/state';
+	import NavLink from '$lib/components/dashboard/NavLink.svelte';
+	import {
+		FileClockIcon,
+		FolderOpenIcon,
+		HouseIcon,
+		PlusIcon,
+		SettingsIcon,
+		UserIcon
+	} from 'lucide-svelte';
+	import { fly } from 'svelte/transition';
+
+	if (!page.url.hash) {
+		page.url.hash = '#home';
+		goto(page.url);
+	}
 </script>
 
-<main class="grid grid-cols-[384px_auto] bg-gray-100">
-	<div class="min-h-screen bg-white p-8 shadow-md">
-		<h1 class="mb-6 text-2xl font-bold text-gray-800">AppLocker</h1>
+<main class="grid grid-cols-[384px_auto] overflow-x-hidden bg-gray-100">
+	<aside class="z-10 min-h-screen bg-white shadow-md">
+		<h1 class="px-4 py-8 text-2xl font-bold text-gray-800">AppLocker</h1>
 
 		<nav class="flex flex-col gap-2">
-			<a href="#home" class="border-gray-800 px-4 py-2 text-gray-800 hover:border-l-2">Home</a>
-			<a href="#apps" class="border-gray-800 px-4 py-2 text-gray-800 hover:border-l-2"
-				>Manage Applications</a
-			>
-			<a href="#log" class="border-gray-800 px-4 py-2 text-gray-800 hover:border-l-2"
-				>Activity Log</a
-			>
-			<a href="#settings" class="border-gray-800 px-4 py-2 text-gray-800 hover:border-l-2"
-				>Settings</a
-			>
-			<a href="#account" class="border-gray-800 px-4 py-2 text-gray-800 hover:border-l-2"
-				>Your Account</a
-			>
+			<NavLink href="#home" text="Home" Icon={HouseIcon} />
+			<NavLink href="#apps" text="Manage Applications" Icon={FolderOpenIcon} />
+			<NavLink href="#log" text="Activity Log" Icon={FileClockIcon} />
+			<NavLink href="#settings" text="Settings" Icon={SettingsIcon} />
+			<NavLink href="#account" text="Your Account" Icon={UserIcon} />
 		</nav>
-	</div>
+	</aside>
 
-	<div class="flex h-8 justify-end bg-gray-200">
-		<button><PlusIcon /></button>
-	</div>
+	{#key page.url.hash}
+		{@const duration = 500}
+
+		<div
+			in:fly={{ duration, x: 500, opacity: 0, delay: duration }}
+			out:fly={{ duration, x: -500, opacity: 0 }}
+		>
+			{#if page.url.hash === '#home'}
+				<div class="flex h-8 justify-end bg-gray-200">
+					<button><PlusIcon /></button>
+				</div>
+				<div class="p-8">
+					<h2 class="text-2xl font-bold text-gray-800">Home</h2>
+					<p class="mt-4 text-gray-800">
+						Welcome to AppLocker! This is a simple application that allows you to manage the
+						applications installed on your computer.
+					</p>
+				</div>
+			{:else if page.url.hash === '#apps'}
+				<h2 class="text-2xl font-bold text-gray-800">Manage Applications</h2>
+				<p class="mt-4 text-gray-800">
+					Here you can view and manage the applications installed on your computer. You can also add
+					new applications to the list.
+				</p>
+			{:else if page.url.hash === '#log'}
+				<h2 class="text-2xl font-bold text-gray-800">Activity Log</h2>
+				<p class="mt-4 text-gray-800">
+					Here you can view the activity log of the applications installed on your computer. You can
+					see when an application was installed, updated, or removed.
+				</p>
+			{:else if page.url.hash === '#settings'}
+				<h2 class="text-2xl font-bold text-gray-800">Settings</h2>
+				<p class="mt-4 text-gray-800">
+					Here you can change the settings of the application. You can change the theme, language,
+					and other preferences.
+				</p>
+			{:else if page.url.hash === '#account'}
+				<h2 class="text-2xl font-bold text-gray-800">Your Account</h2>
+				<p class="mt-4 text-gray-800">
+					Here you can view and manage your account. You can change your password, email, and other
+					information.
+				</p>
+			{/if}
+		</div>
+	{/key}
 </main>
