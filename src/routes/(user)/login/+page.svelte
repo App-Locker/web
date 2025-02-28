@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { goto, invalidateAll } from '$app/navigation';
 	import { user } from '$lib/store/user.svelte';
 
 	let email = '';

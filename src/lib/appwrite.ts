@@ -1,5 +1,5 @@
-import { Account, Client, ID } from 'appwrite';
 import { PUBLIC_PROJECT_ID } from '$env/static/public';
+import { Account, Client } from 'appwrite';
 
 export const client = new Client()
 	.setEndpoint("https://backend.applocker.xyz/v1")

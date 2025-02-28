@@ -1,8 +1,7 @@
 import { browser } from '$app/environment';
-import { goto } from '$app/navigation';
+import { goto, invalidateAll } from '$app/navigation';
 import { account } from '$lib/appwrite';
 import { ID, type Models } from 'appwrite';
-import { invalidateAll } from '$app/navigation';
 
 type UserStore = {
     value: Models.User<any> | null;
