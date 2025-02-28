@@ -7,6 +7,7 @@
 		FileClockIcon,
 		FolderOpenIcon,
 		HouseIcon,
+		MinusIcon,
 		PlusIcon,
 		SettingsIcon,
 		UserIcon
@@ -33,16 +34,13 @@
 	</aside>
 
 	{#key page.url.hash}
-		{@const duration = 500}
+		{@const duration = 275}
 
 		<div
 			in:fly={{ duration, x: 500, opacity: 0, delay: duration }}
 			out:fly={{ duration, x: -500, opacity: 0 }}
 		>
 			{#if page.url.hash === '#home'}
-				<div class="flex h-8 justify-end bg-gray-200">
-					<button><PlusIcon /></button>
-				</div>
 				<div class="p-8">
 					<h2 class="text-2xl font-bold text-gray-800">Home</h2>
 					<p class="mt-4 text-gray-800">
@@ -51,29 +49,42 @@
 					</p>
 				</div>
 			{:else if page.url.hash === '#apps'}
-				<h2 class="text-2xl font-bold text-gray-800">Manage Applications</h2>
-				<p class="mt-4 text-gray-800">
-					Here you can view and manage the applications installed on your computer. You can also add
-					new applications to the list.
-				</p>
+				<div class="flex h-8 justify-end gap-2 bg-gray-200">
+					<button><MinusIcon /></button>
+					<button><SettingsIcon /></button>
+					<button><PlusIcon /></button>
+				</div>
+				<div class="p-8">
+					<h2 class="text-2xl font-bold text-gray-800">Manage Applications</h2>
+					<p class="mt-4 text-gray-800">
+						Here you can view and manage the applications installed on your computer. You can also
+						add new applications to the list.
+					</p>
+				</div>
 			{:else if page.url.hash === '#log'}
-				<h2 class="text-2xl font-bold text-gray-800">Activity Log</h2>
-				<p class="mt-4 text-gray-800">
-					Here you can view the activity log of the applications installed on your computer. You can
-					see when an application was installed, updated, or removed.
-				</p>
+				<div class="p-8">
+					<h2 class="text-2xl font-bold text-gray-800">Activity Log</h2>
+					<p class="mt-4 text-gray-800">
+						Here you can view the activity log of the applications installed on your computer. You
+						can see when an application was installed, updated, or removed.
+					</p>
+				</div>
 			{:else if page.url.hash === '#settings'}
-				<h2 class="text-2xl font-bold text-gray-800">Settings</h2>
-				<p class="mt-4 text-gray-800">
-					Here you can change the settings of the application. You can change the theme, language,
-					and other preferences.
-				</p>
+				<div class="p-8">
+					<h2 class="text-2xl font-bold text-gray-800">Settings</h2>
+					<p class="mt-4 text-gray-800">
+						Here you can change the settings of the application. You can change the theme, language,
+						and other preferences.
+					</p>
+				</div>
 			{:else if page.url.hash === '#account'}
-				<h2 class="text-2xl font-bold text-gray-800">Your Account</h2>
-				<p class="mt-4 text-gray-800">
-					Here you can view and manage your account. You can change your password, email, and other
-					information.
-				</p>
+				<div class="p-8">
+					<h2 class="text-2xl font-bold text-gray-800">Your Account</h2>
+					<p class="mt-4 text-gray-800">
+						Here you can view and manage your account. You can change your password, email, and
+						other information.
+					</p>
+				</div>
 			{/if}
 		</div>
 	{/key}
