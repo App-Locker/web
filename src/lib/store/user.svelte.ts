@@ -8,16 +8,19 @@ type UserStore = {
 }
 
 const createUser = () => {
-    const store = $state<UserStore>({
-        value: null,
-    });
+    let store = $state<UserStore | null>(null);
 
     async function init() {
         if (!browser) return;
+
         try {
-            store.value = await account.get();
+            store = {
+                value: await account.get()
+            }
         } catch (e) {
-            store.value = null;
+            store = {
+                value: null
+            }
         }
     }
 
@@ -61,16 +64,20 @@ const createUser = () => {
     }
 
     async function logout() {
-        await account.deleteSession('current');
-        store.value = null;
+        if (store) {
+            await account.deleteSession('current');
+
+            store.value = null;
+        }
+
 
         invalidateAll();
         goto('/');
     }
 
     return {
-        get value(): UserStore["value"] {
-            return store.value;
+        get value() {
+            return store?.value;
         },
 
         register,

@@ -1,4 +1,5 @@
 <script>
+	import { browser } from '$app/environment';
 	import { goto } from '$app/navigation';
 	import { page } from '$app/state';
 	import NavLink from '$lib/components/dashboard/NavLink.svelte';
@@ -12,7 +13,7 @@
 	} from 'lucide-svelte';
 	import { fly } from 'svelte/transition';
 
-	if (!page.url.hash) {
+	if (!page.url.hash && browser) {
 		page.url.hash = '#home';
 		goto(page.url);
 	}
